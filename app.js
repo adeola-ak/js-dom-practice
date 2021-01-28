@@ -66,5 +66,19 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
+	//check for matches
+	function checkForMatch() {}
+
+	//flip card
+	function flipCard() {
+		const cardId = this.getAttribute("data-id");
+		cardsChosen.push(cardArray[cardId].name);
+		cardsChosenId.push(cardId);
+		this.setAttribute("src", cardArray[cardId].img);
+		if (cardsChosen.length === 2) {
+			setTimeout(checkForMatch, 500);
+		}
+	}
+
 	createBoard();
 });
